@@ -13,7 +13,7 @@ export default function Header() {
 		<nav
 			className={`header-container text-center flex justify-between items-center sm:px-10 px-3 border-b-4 shadow-md w-screen h-[90px]  backdrop-blur-xm fixed transition-all ${
 				bgColored ? "bg-blue-50" : ""
-			} hover:bg-white`}
+			} hover:bg-white z-10`}
 		>
 			<div className="">logo</div>
 

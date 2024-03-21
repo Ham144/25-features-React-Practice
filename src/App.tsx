@@ -3,6 +3,8 @@ import Accordion from "./pages/Accordion";
 import RandomColor from "./pages/RandomColor";
 import { useEffect, useRef } from "react";
 import StarRatings from "./components/StarRatings";
+import ImagesSlider from "./components/ImagesSlider";
+import Loadmore from "./components/Loadmore";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -19,7 +21,10 @@ const App = () => {
 			<Home />
 			<Accordion />
 			<RandomColor />
-			<StarRatings />
+			<StarRatings noOfStar={7} />
+			<ImagesSlider url="https://dummyjson.com/quotes" limit={50} />
+			<Loadmore url="https://dummyjson.com/products" />
+
 			<div ref={ref} />
 		</div>
 	);
