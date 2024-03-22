@@ -9,9 +9,9 @@ interface MenuList {
 interface Props {
 	menuList: MenuList[];
 }
-export default function MenuList({ menuList }: Props) {
+export default function MenuList({ menuList = [] }: Props) {
 	return (
-		<ul className="overflow-hidden font-bold">
+		<ul className="overflow-hidden texbo">
 			<div className="translate-x-3">
 				{" "}
 				{menuList && menuList.length

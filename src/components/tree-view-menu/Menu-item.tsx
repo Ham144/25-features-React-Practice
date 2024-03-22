@@ -28,7 +28,7 @@ export default function MenuItem({ item }: Props) {
 					<p>{item.label}</p>
 					{item && item.children && item.children.length > 0 ? (
 						<span
-							className="cursor-pointer bg-blue-400 text-white rounded-full p-1"
+							className="text-white cursor-pointer bg-blue-900 rounded-full p-1"
 							onClick={() => handleToggleChilren(item.label)}
 						>
 							{displayCurrentChildren[item.label] ? <FaMinus /> : <FaPlus />}
