@@ -19,8 +19,6 @@ export default function MenuItem({ item }: Props) {
 		});
 	}
 
-	console.log(displayCurrentChildren);
-
 	return (
 		<li>
 			<div className="flex flex-col">

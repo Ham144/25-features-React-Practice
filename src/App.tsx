@@ -7,6 +7,8 @@ import ImagesSlider from "./components/ImagesSlider";
 import Loadmore from "./components/Loadmore";
 import TreeViewMenu from "./components/tree-view-menu";
 import { Menuitems } from "./lib/data";
+import QrCode from "./components/Qr-code";
+import LightDarkMode from "./components/light-dark-mode";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -27,7 +29,8 @@ const App = () => {
 			<ImagesSlider url="https://dummyjson.com/quotes" limit={50} />
 			<Loadmore url="https://dummyjson.com/products" />
 			<TreeViewMenu menus={Menuitems} />
-
+			<QrCode />
+			<LightDarkMode />
 			<div ref={ref} />
 		</div>
 	);

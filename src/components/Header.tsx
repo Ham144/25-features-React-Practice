@@ -15,7 +15,7 @@ export default function Header() {
 				bgColored ? "bg-blue-50" : ""
 			} hover:bg-white z-10`}
 		>
-			<div className="">logo</div>
+			<div className="translate-x-6">logo</div>
 
 			<div>navigation</div>
 		</nav>

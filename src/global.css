@@ -8,6 +8,21 @@
 	box-sizing: border-box;
 }
 
+:root {
+	background-color: azure;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+[dark-mode="dark"] {
+	--background-color: black;
+	--color: white;
+}
+
+.dark {
+	background: var(--background-color);
+	color: var(--color);
+}
+
 .header-container {
 	border-bottom: 2px;
 	box-shadow: inset;
