@@ -20,7 +20,7 @@ export default function MenuItem({ item }: Props) {
 	}
 
 	return (
-		<li>
+		<li className="  p-[20px] hover:bg-blue-50">
 			<div className="flex flex-col">
 				<div className="flex justify-between w-[200px] ">
 					<p>{item.label}</p>
@@ -34,7 +34,7 @@ export default function MenuItem({ item }: Props) {
 					) : null}
 				</div>
 
-				<div className="bg-blue-50">
+				<div className="bg-blue-50  cursor-pointer">
 					{item &&
 					item.children &&
 					item.children.length > 0 &&

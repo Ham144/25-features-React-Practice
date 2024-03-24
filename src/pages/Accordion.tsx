@@ -22,16 +22,16 @@ const Accordion = () => {
 	console.log(multiple);
 
 	return (
-		<div className="flex flex-col justify-center text-center">
+		<div className="flex flex-col justify-center bg-transparent text-center">
 			<button
-				className="flex justify-center items-center border bg-blue-50 hover:bg-blue-200 py-3 rounded-t-xl"
+				className="flex justify-center items-center border dark hover:bg-blue-200 py-3 rounded-t-xl"
 				onClick={() => setShowMultiple(!showMultiple)}
 			>
 				Show Multiple Accordion {showMultiple ? "(Enabled)" : "(Disabled)"}
 			</button>
 			{products.map((pro) => (
 				<div
-					className="border bg-blue-50 hover:font-bold cursor-pointer px-8 py-2 text-left sm:w-[500px] w-screen"
+					className="border bg-transparent hover:font-bold cursor-pointer px-8 py-2 text-left sm:w-[500px] "
 					key={pro.id}
 					onClick={
 						showMultiple

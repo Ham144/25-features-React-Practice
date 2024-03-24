@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import Accordion from "./pages/Accordion";
 import RandomColor from "./pages/RandomColor";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import StarRatings from "./components/StarRatings";
 import ImagesSlider from "./components/ImagesSlider";
 import Loadmore from "./components/Loadmore";
@@ -9,9 +9,16 @@ import TreeViewMenu from "./components/tree-view-menu";
 import { Menuitems } from "./lib/data";
 import QrCode from "./components/Qr-code";
 import LightDarkMode from "./components/light-dark-mode";
+import ScrollPercentage from "./components/ScrollPercentage";
+import TabImplement from "./components/tab-component/TabImplement";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
+	const [theme, setTheme] = useState("dark");
+
+	const handleTheme = (newTheme: string) => {
+		setTheme(newTheme);
+	};
 
 	useEffect(() => {
 		ref.current?.scrollIntoView({
@@ -21,7 +28,10 @@ const App = () => {
 	}, []);
 
 	return (
-		<div className=" flex gap-y-3 flex-col items-center justify-items-center  h-screen">
+		<div
+			className=" flex gap-y-3 flex-col dark items-center justify-items-center  "
+			data-theme={theme} //this is the key of dark theme here remember
+		>
 			<Home />
 			<Accordion />
 			<RandomColor />
@@ -30,7 +40,9 @@ const App = () => {
 			<Loadmore url="https://dummyjson.com/products" />
 			<TreeViewMenu menus={Menuitems} />
 			<QrCode />
-			<LightDarkMode />
+			<LightDarkMode onChanged={handleTheme} />
+			<ScrollPercentage />
+			<TabImplement />
 			<div ref={ref} />
 		</div>
 	);

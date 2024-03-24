@@ -14,6 +14,8 @@ interface Props {
 
 export default function TreeViewMenu({ menus }: Props) {
 	const [showMenu, setShowMenu] = useState(false);
+	const [translatex, setTranslatex] = useState("");
+	const wrapper = useRef(null);
 
 	function useOutsideAlerter(ref: HTMLDivElement) {
 		useEffect(() => {
@@ -30,18 +32,26 @@ export default function TreeViewMenu({ menus }: Props) {
 			};
 		}, [ref]);
 	}
-	const wrapper = useRef(null);
-	useOutsideAlerter(wrapper);
+	useOutsideAlerter(wrapper); //for hiding when click outside
+	useEffect(() => {
+		setTranslatex(translatex === "-300px" ? "" : "-300px");
+	}, [showMenu]);
+
 	return (
-		<div className="fixed left-0  z-20" ref={wrapper}>
+		<div
+			className="fixed border-none overflow-x-hidden   left-0  z-20"
+			ref={wrapper}
+		>
 			<RxHamburgerMenu
 				className={`my-6 left-15 top-15 mx-3 drop-shadow-xl`}
 				size={40}
 				onClick={() => setShowMenu(!showMenu)}
 			/>
 			<div
-				className={` ${showMenu ? "" : "translate-x-[-400px]"}
-			  h-screen z-20   bg-blue-300 w-[300px] transition-all rounded-t-lg `}
+				className={` 
+			  translate-x-[${translatex}] ${
+					!showMenu && "hidden"
+				}  h-screen bg-blue-700 font-bold text-2xl w-[300px]   transition-all rounded-t-lg `}
 			>
 				<MenuList menuList={menus} />
 			</div>

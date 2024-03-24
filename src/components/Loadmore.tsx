@@ -7,7 +7,6 @@ interface Props {
 export default function Loadmore(props: Props) {
 	const [images, setImages] = useState([]);
 	const [isLoading, setisLoading] = useState(false);
-	const [error, setNewError] = useState("");
 	const [count, setCount] = useState(0);
 	const [isDisabledButton, setisDisbledButton] = useState(false);
 
@@ -39,13 +38,13 @@ export default function Loadmore(props: Props) {
 		setCount(count + 1);
 	}
 
-	// if (isLoading) {
-	// 	return <div>Image data is loading...</div>;
-	// }
+	if (isLoading) {
+		return <div>Image data loading...</div>;
+	}
 
 	return (
-		<div className="flex flex-col justify-center gap-y-7 ">
-			<div className="grid grid-cols-5 gap-8  justify-items-center  rounded-lg  mx-auto sm:mt-10">
+		<div className="flex flex-col dark justify-center gap-y-7 ">
+			<div className="grid sm:grid-cols-5 grid-cols-2 gap-8  justify-items-center  rounded-lg  mx-auto sm:mt-10">
 				{images &&
 					images.length &&
 					images.map((image) => (
@@ -73,7 +72,7 @@ export default function Loadmore(props: Props) {
 			<button
 				className={`${
 					isDisabledButton ? "hidden" : ""
-				} bg-blue-500 w-[700px] rounded-xl border  mx-auto  px-6 py-2 hover:scale-105`}
+				} bg-blue-500 w-[80%] rounded-xl border  mx-auto  px-6 py-2 hover:scale-105`}
 				onClick={handleLoadMore}
 				disabled={isDisabledButton ? false : false}
 			>

@@ -51,9 +51,9 @@ export default function ImagesSlider(props: Props) {
 	};
 
 	return (
-		<div className="flex  items-center gap-x-3 ">
+		<div className="flex  items-center  gap-x-3 w-[99%] sm:w-[700px]">
 			<FcPrevious
-				className="hover:scale-105 hover:bg-blue-200 rounded-md "
+				className="hover:scale-105   hover:bg-blue-200 rounded-md "
 				size={60}
 				onClick={previous}
 			/>
@@ -61,20 +61,22 @@ export default function ImagesSlider(props: Props) {
 				<div
 					className={`${
 						index !== currentSlide ? "hidden" : ""
-					} flex flex-col justify-between items-center sm:w-[700px] sm:h-auto gap-y-2 flex-wrap text-center border border-slate-400  rounded-sm font-bold italic text-2xl px-2 `}
+					} flex flex-col justify-between w-full items-center  sm:h-auto gap-y-2 flex-wrap text-center border border-none  bg-transparent rounded-sm font-bold italic text-2xl  px-2 `}
 				>
-					<div className=" mx-auto space-y-4">
-						<p className="bg-blue-50 p-2 px-8 rounded-sm">{index}</p>
+					<div className=" mx-auto space-y-4 w-full">
+						<p className="bg-blue-100 text-black p-2 px-8 rounded-sm ">
+							{index}
+						</p>
 						<div key={image.id}>{image.quote}</div>
 						<p className="font-light">~{image.author}~</p>
-						<div className="marble grid grid-cols-10  w-[50%] mx-auto  ">
+						<div className=" marble grid grid-cols-10 text-black gap-y-2 w-full  ">
 							{images.map((_, index) => (
 								<button
 									className={`${
 										index === currentSlide
 											? "bg-blue-300 border border-black"
 											: ""
-									} w-8 h-8 hover:bg-slate-400 cursor-pointer rounded-full bg-slate-300 transition-all  text-center     `}
+									} w-8 h-8  hover:bg-slate-400  cursor-pointer rounded-full bg-slate-300 transition-all  text-center     `}
 									onClick={() => handleMarble(index)}
 								>
 									{index}

@@ -11,8 +11,8 @@ interface Props {
 }
 export default function MenuList({ menuList = [] }: Props) {
 	return (
-		<ul className="overflow-hidden texbo">
-			<div className="translate-x-3">
+		<ul className=" text-black">
+			<div className="translate-x-3 ">
 				{" "}
 				{menuList && menuList.length
 					? menuList.map((listItem) => <MenuItem item={listItem} />)
