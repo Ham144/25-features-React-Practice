@@ -46,8 +46,6 @@ const App = () => {
 			</ScrollPercentage>
 			<TabImplement />
 			<ModalUtil />
-			<ModalUtil />
-			<ModalUtil />
 
 			<div ref={ref} />
 		</div>
