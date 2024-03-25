@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TabImplement from "./tab-component/TabImplement";
 import Tabs from "./tab-component/Tabs";
+import { ScrollPercentageContexts } from "./ScrollPercentage";
 
 const navigationlist = [
 	{
 		label: "tab 1",
 		content: (
-			<div className="fixed bottom-0 text-blue-400  text-center">
+			<div className="fixed uppercase bottom-0 text-blue-400  text-center">
 				just for an example
 			</div>
 		),
@@ -14,7 +15,7 @@ const navigationlist = [
 	{
 		label: "tab 2",
 		content: (
-			<div className="fixed bottom-0  text-yellow-400 text-center">
+			<div className="fixed uppercase bottom-0  text-yellow-400 text-center">
 				just for an example
 			</div>
 		),
@@ -22,7 +23,7 @@ const navigationlist = [
 	{
 		label: "tab 3",
 		content: (
-			<div className="fixed bottom-0 text-red-400   text-center">
+			<div className="fixed uppercase bottom-0 text-red-400   text-center">
 				just for an example
 			</div>
 		),
@@ -31,6 +32,7 @@ const navigationlist = [
 
 export default function Header() {
 	const [bgColored, setBgColored] = useState(true);
+	const { scrollPercentage } = useContext(ScrollPercentageContexts); //ga tau kenapa bisa
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -39,6 +41,8 @@ export default function Header() {
 		};
 		window.addEventListener("scroll", handleScroll);
 	});
+	console.log(scrollPercentage);
+
 	return (
 		<nav
 			className={`header-container  text-center flex justify-between items-center sm:px-10 px-3 border-b-4 shadow-md w-full h-[90px] text-black  backdrop-blur-xm fixed transition-all text-2xl ${
@@ -47,7 +51,11 @@ export default function Header() {
 		>
 			<div className="translate-x-6  sm:block hidden">logo</div>
 
-			<div className="absolute z-50 w-screen  ">
+			<div
+				className={`${
+					scrollPercentage > 5 ? "hidden" : ""
+				} fixed sm:h-12 z-50 w-screen rounded-lg top-4 sm:translate-x-[400px]`}
+			>
 				<Tabs Tabs={navigationlist} onChange={null} />
 			</div>
 		</nav>

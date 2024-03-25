@@ -9,8 +9,9 @@ import TreeViewMenu from "./components/tree-view-menu";
 import { Menuitems } from "./lib/data";
 import QrCode from "./components/Qr-code";
 import LightDarkMode from "./components/light-dark-mode";
-import ScrollPercentage from "./components/ScrollPercentage";
 import TabImplement from "./components/tab-component/TabImplement";
+import ScrollPercentage from "./components/ScrollPercentage";
+import ModalUtil from "./components/pop-up/Modalutil";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -32,17 +33,20 @@ const App = () => {
 			className=" flex gap-y-3 flex-col dark items-center justify-items-center  "
 			data-theme={theme} //this is the key of dark theme here remember
 		>
-			<Home />
-			<Accordion />
-			<RandomColor />
-			<StarRatings noOfStar={7} />
-			<ImagesSlider url="https://dummyjson.com/quotes" limit={50} />
-			<Loadmore url="https://dummyjson.com/products" />
-			<TreeViewMenu menus={Menuitems} />
-			<QrCode />
-			<LightDarkMode onChanged={handleTheme} />
-			<ScrollPercentage />
+			<ScrollPercentage>
+				<Home />
+				<Accordion />
+				<RandomColor />
+				<StarRatings noOfStar={7} />
+				<ImagesSlider url="https://dummyjson.com/quotes" limit={50} />
+				<Loadmore url="https://dummyjson.com/products" />
+				<TreeViewMenu menus={Menuitems} />
+				<QrCode />
+				<LightDarkMode onChanged={handleTheme} />
+			</ScrollPercentage>
 			<TabImplement />
+			<ModalUtil />
+
 			<div ref={ref} />
 		</div>
 	);
