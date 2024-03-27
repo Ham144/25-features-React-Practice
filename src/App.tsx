@@ -49,7 +49,9 @@ const App = () => {
 			<TabImplement />
 			<ModalUtil />
 			<GithubProfileFinder />
-			<SearchUser /> //Search AutoCompleteSearch
+			<SearchUser />
+			{/* //Search AutoCompleteSearch or recomendation */}
+
 			<div ref={ref} />
 		</div>
 	);
