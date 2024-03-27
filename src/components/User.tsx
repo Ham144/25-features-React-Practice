@@ -1,8 +1,19 @@
-export default function User({ userData }) {
+interface Props {
+	userData: {
+		avatar_url: string;
+		bio: string;
+		html_url: string;
+		id: number;
+		location: string;
+		name: string;
+		public_repos: number;
+	};
+}
+export default function User({ userData }: Props) {
 	const { avatar_url, bio, html_url, id, location, name, public_repos } =
 		userData;
 
-	return (
+	return userData ? (
 		<div className="flex border border-green-300 px-20 py-3 my-3 flex-wrap rounded-e-xl text-green-400 sm:justify-center">
 			<div className="image flex flex-col  justify-center gap-3">
 				<img
@@ -27,5 +38,5 @@ export default function User({ userData }) {
 				</a>
 			</div>
 		</div>
-	);
+	) : null;
 }

@@ -13,6 +13,7 @@ import TabImplement from "./components/tab-component/TabImplement";
 import ScrollPercentage from "./components/ScrollPercentage";
 import ModalUtil from "./components/pop-up/Modalutil";
 import GithubProfileFinder from "./components/GithubProfileFinder";
+import SearchUser from "./components/AutoCompleteSearch/SearchUser";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ const App = () => {
 			<TabImplement />
 			<ModalUtil />
 			<GithubProfileFinder />
-
+			<SearchUser /> //Search AutoCompleteSearch
 			<div ref={ref} />
 		</div>
 	);

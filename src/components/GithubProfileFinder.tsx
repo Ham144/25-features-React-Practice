@@ -5,9 +5,16 @@ export default function GithubProfileFinder() {
 	const [userName, setUserName] = useState("ham144");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
-	const [userData, setUserDAta] = useState("");
+	const [userData, setUserDAta] = useState(null);
 
-	const fetchData = async () => {
+	if (loading) {
+		return <div>Searching Data..</div>;
+	}
+
+	if (error) {
+		return <div>Something Gone Wrong {error} </div>;
+	}
+	const fetchData = async (userName: string) => {
 		try {
 			setLoading(true);
 			const response = await fetch(
@@ -23,20 +30,8 @@ export default function GithubProfileFinder() {
 		}
 	};
 
-	useEffect(() => {
-		fetchData();
-	}, []);
-
-	if (loading) {
-		return <div>Searching Data..</div>;
-	}
-
-	if (error) {
-		return <div>Something Gone Wrong {error} </div>;
-	}
-
 	const handleEnter = () => {
-		fetchData();
+		fetchData(userName);
 		setUserName("");
 	};
 	return (
@@ -57,9 +52,7 @@ export default function GithubProfileFinder() {
 					value="enter"
 				/>
 			</div>
-			<div className="profileView">
-				{userData && <User userData={userData} />}
-			</div>
+			{userData ? <User userData={userData} /> : <div>Loading..</div>}
 		</div>
 	);
 }
