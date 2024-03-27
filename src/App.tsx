@@ -12,6 +12,7 @@ import LightDarkMode from "./components/light-dark-mode";
 import TabImplement from "./components/tab-component/TabImplement";
 import ScrollPercentage from "./components/ScrollPercentage";
 import ModalUtil from "./components/pop-up/Modalutil";
+import GithubProfileFinder from "./components/GithubProfileFinder";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -46,6 +47,7 @@ const App = () => {
 			</ScrollPercentage>
 			<TabImplement />
 			<ModalUtil />
+			<GithubProfileFinder />
 
 			<div ref={ref} />
 		</div>

@@ -41,7 +41,6 @@ export default function Header() {
 		};
 		window.addEventListener("scroll", handleScroll);
 	});
-	console.log(scrollPercentage);
 
 	return (
 		<nav
