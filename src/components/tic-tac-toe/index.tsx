@@ -76,7 +76,7 @@ export default function TicTacToe() {
 	};
 
 	return (
-		<div className="flex flex-col justify-center items-center">
+		<div className="flex flex-col  justify-center items-center">
 			{!winner ? (
 				<div className="text-4xl font-bold text-center ">
 					now is the {Xturn ? "X" : "O"} turn
@@ -99,14 +99,14 @@ export default function TicTacToe() {
 					<Square getindex={8} value={square[8]} />
 				</div>
 			</div>
-			<div className="flex w-screen">
-				<button
-					className="bg-blue-400 border w-[200px] rounded-sm px-6 py-1 drop-shadow-lg mt-3"
-					onClick={() => handleReset()}
-				>
-					Reset
-				</button>
-				<div className="fixed w-screen ">
+			<button
+				className="bg-blue-400 border mx-auto rounded-sm px-6 py-1 drop-shadow-lg mt-3"
+				onClick={() => handleReset()}
+			>
+				Reset
+			</button>
+			<div className="fixed justify-center mx-auto w-[99%] items-center   ">
+				<div className="">
 					<CustomModal
 						customConfirm={() => handleReset()}
 						label="Won!!"
