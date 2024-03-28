@@ -90,7 +90,7 @@ export default function SearchUser() {
 		<div>
 			<h1 className="text-3xl">{arrowHover}</h1>
 			<input
-				className="border border-black rounded dark px-4 py-1 w-[400px]"
+				className="border border-black rounded  px-4 py-1 w-[400px]"
 				type="text"
 				value={searchParams}
 				onChange={(e) => handleChange(e.target.value)}

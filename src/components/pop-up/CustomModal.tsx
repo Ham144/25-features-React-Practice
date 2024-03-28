@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { GrClose } from "react-icons/gr";
-import { TbFlagCancel } from "react-icons/tb";
 
 type Props = {
 	label: string;
@@ -8,6 +7,7 @@ type Props = {
 	confirm: string;
 	cancel: string;
 	show: boolean;
+	customConfirm?: () => void;
 };
 
 export default function CustomModal(props: Props) {
@@ -16,6 +16,7 @@ export default function CustomModal(props: Props) {
 
 	const handleConfirm = () => {
 		setFeedback(1);
+		props.customConfirm ? props.customConfirm() : null;
 		setShow(false);
 	};
 

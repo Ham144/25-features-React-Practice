@@ -14,6 +14,7 @@ import ScrollPercentage from "./components/ScrollPercentage";
 import ModalUtil from "./components/pop-up/Modalutil";
 import GithubProfileFinder from "./components/GithubProfileFinder";
 import SearchUser from "./components/AutoCompleteSearch/SearchUser";
+import TicTacToe from "./components/tic-tac-toe";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -49,9 +50,8 @@ const App = () => {
 			<TabImplement />
 			<ModalUtil />
 			<GithubProfileFinder />
-			<SearchUser />
-			{/* //Search AutoCompleteSearch or recomendation */}
-
+			<SearchUser /> {/* //Search AutoCompleteSearch or recomendation */}
+			<TicTacToe />
 			<div ref={ref} />
 		</div>
 	);
