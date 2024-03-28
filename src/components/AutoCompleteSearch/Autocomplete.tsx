@@ -9,7 +9,7 @@ export default function Autocomplete({ filteredUsers, onPick, onArrowHover }) {
 									? "font-extrabold dark  bg-blue-500 border"
 									: "bg-blue-300"
 							}
-                        dark`}
+                        dark hover:border border-white cursor-pointer`}
 							onClick={(e) => onPick(e)}
 						>
 							{user.firstName} {user.lastName} {user.maidenName}
