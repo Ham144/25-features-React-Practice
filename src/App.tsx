@@ -15,6 +15,8 @@ import ModalUtil from "./components/pop-up/Modalutil";
 import GithubProfileFinder from "./components/GithubProfileFinder";
 import SearchUser from "./components/AutoCompleteSearch/SearchUser";
 import TicTacToe from "./components/tic-tac-toe";
+import FeatureFlagsGlobalState from "./components/Feature-log/Context";
+import FeatureFlags from "./components/Feature-log";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -52,6 +54,9 @@ const App = () => {
 			<GithubProfileFinder />
 			<SearchUser /> {/* //Search AutoCompleteSearch or recomendation */}
 			<TicTacToe />
+			<FeatureFlagsGlobalState>
+				<FeatureFlags />
+			</FeatureFlagsGlobalState>
 			<div ref={ref} />
 		</div>
 	);
