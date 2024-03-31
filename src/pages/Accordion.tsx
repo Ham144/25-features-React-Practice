@@ -19,7 +19,6 @@ const Accordion = () => {
 			setMultiple(multiple.filter((mul) => mul !== pro));
 		}
 	};
-	console.log(multiple);
 
 	return (
 		<div className="flex flex-col justify-center bg-transparent text-center">

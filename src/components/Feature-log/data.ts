@@ -1,15 +1,18 @@
-const DummyApiResponse = {
-	ShowTicTacToe: false,
-	showRandomColorGenerator: true,
-	showAccordion: false,
-	showTreeViewMenu: true,
-};
+function ShowFlagsDataResponse() {
+	const FlagsDataResponse = {
+		showRandomGenerator: true,
+		showAccordion: true,
+		showTreeViewMenu: true,
+		showTicTacToe: true,
+	};
 
-function featureFlagsDataServiceCall() {
+	function ChangeFlagsDataResponse() {}
 	return new Promise((resolve, reject) => {
-		if (DummyApiResponse) setTimeout(resolve(DummyApiResponse), 500);
-		else reject("somthing gone wrong");
+		if (FlagsDataResponse) setTimeout(resolve(FlagsDataResponse), 500);
+		else {
+			reject("Something gone wrong");
+		}
 	});
 }
 
-export default featureFlagsDataServiceCall;
+export default ShowFlagsDataResponse;

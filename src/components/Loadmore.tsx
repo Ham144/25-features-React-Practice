@@ -22,7 +22,6 @@ export default function Loadmore(props: Props) {
 
 			setImages([...images, ...data.products]);
 			setisLoading(false);
-			console.log(images);
 		} catch (error) {
 			setisLoading(false);
 			console.log("from catch" + error);

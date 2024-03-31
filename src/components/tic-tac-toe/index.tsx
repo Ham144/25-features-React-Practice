@@ -9,14 +9,15 @@ export default function TicTacToe() {
 
 	const handleClick = (getindex) => {
 		const [...Squares] = square;
+		setCounter(counter + 1);
 		if (Squares[getindex] !== "") {
 			alert("illegal move");
 			return;
-		} else {
+		} else if (counter < square.length) {
 			Squares[getindex] = Xturn ? "x" : "o";
-			setCounter(counter + 1);
 			setXturn(!Xturn);
 		}
+
 		setSquare(Squares);
 	};
 
@@ -55,11 +56,6 @@ export default function TicTacToe() {
 				setWinner(Xturn ? "O won!!" : "X won!!");
 			}
 		});
-		if (counter === square.length) {
-			alert("square not remaining");
-			handleReset();
-			setCounter(0);
-		}
 	};
 
 	if (winner !== "") {
@@ -110,7 +106,11 @@ export default function TicTacToe() {
 					<CustomModal
 						customConfirm={() => handleReset()}
 						label="Won!!"
-						message={`${winner}`}
+						message={`${
+							winner === "O won!!" || winner === "X won!!"
+								? winner
+								: "play again?"
+						}`}
 						confirm="play Again"
 						cancel="cancel"
 						show={winner ? true : false}

@@ -19,7 +19,6 @@ export default function ImagesSlider(props: Props) {
 			const data = await response.json().then((quote) => quote.quotes);
 
 			setImages(data);
-			console.log(images);
 		} catch (error) {
 			setIsLoading(false);
 			setError(String(error));

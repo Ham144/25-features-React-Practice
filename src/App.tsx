@@ -15,8 +15,13 @@ import ModalUtil from "./components/pop-up/Modalutil";
 import GithubProfileFinder from "./components/GithubProfileFinder";
 import SearchUser from "./components/AutoCompleteSearch/SearchUser";
 import TicTacToe from "./components/tic-tac-toe";
-import FeatureFlagsGlobalState from "./components/Feature-log/Context";
-import FeatureFlags from "./components/Feature-log";
+import ShowFlagsDataGlobal, {
+	FlagsContext,
+} from "./components/Feature-log/Context";
+import ShowFlags from "./components/Feature-log";
+import Header from "./components/Header";
+import TestingCustomHooks from "./components/customHook";
+import TestOutsideClick from "./components/when outside-click";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +50,6 @@ const App = () => {
 				<StarRatings noOfStar={7} />
 				<ImagesSlider url="https://dummyjson.com/quotes" limit={50} />
 				<Loadmore url="https://dummyjson.com/products" />
-				<TreeViewMenu menus={Menuitems} />
 				<QrCode />
 				<LightDarkMode onChanged={handleTheme} />
 			</ScrollPercentage>
@@ -54,9 +58,11 @@ const App = () => {
 			<GithubProfileFinder />
 			<SearchUser /> {/* //Search AutoCompleteSearch or recomendation */}
 			<TicTacToe />
-			<FeatureFlagsGlobalState>
-				<FeatureFlags />
-			</FeatureFlagsGlobalState>
+			<ShowFlagsDataGlobal>
+				<ShowFlags />
+			</ShowFlagsDataGlobal>
+			<TestingCustomHooks />
+			<TestOutsideClick />
 			<div ref={ref} />
 		</div>
 	);
