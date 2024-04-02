@@ -22,6 +22,9 @@ import ShowFlags from "./components/Feature-log";
 import Header from "./components/Header";
 import TestingCustomHooks from "./components/customHook";
 import TestOutsideClick from "./components/when outside-click";
+import UseWindowResizeTest from "./components/use layout effect/WindowResizeTest";
+import ToParticualrSection from "./components/ParticularSection";
+import Weather from "./components/weather app/Weather";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -63,6 +66,9 @@ const App = () => {
 			</ShowFlagsDataGlobal>
 			<TestingCustomHooks />
 			<TestOutsideClick />
+			<UseWindowResizeTest />
+			{/* <ToParticualrSection /> */}
+			<Weather />
 			<div ref={ref} />
 		</div>
 	);
