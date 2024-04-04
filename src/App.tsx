@@ -5,8 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import StarRatings from "./components/StarRatings";
 import ImagesSlider from "./components/ImagesSlider";
 import Loadmore from "./components/Loadmore";
-import TreeViewMenu from "./components/tree-view-menu";
-import { Menuitems } from "./lib/data";
 import QrCode from "./components/Qr-code";
 import LightDarkMode from "./components/light-dark-mode";
 import TabImplement from "./components/tab-component/TabImplement";
@@ -15,15 +13,11 @@ import ModalUtil from "./components/pop-up/Modalutil";
 import GithubProfileFinder from "./components/GithubProfileFinder";
 import SearchUser from "./components/AutoCompleteSearch/SearchUser";
 import TicTacToe from "./components/tic-tac-toe";
-import ShowFlagsDataGlobal, {
-	FlagsContext,
-} from "./components/Feature-log/Context";
+import ShowFlagsDataGlobal from "./components/Feature-log/Context";
 import ShowFlags from "./components/Feature-log";
-import Header from "./components/Header";
 import TestingCustomHooks from "./components/customHook";
 import TestOutsideClick from "./components/when outside-click";
 import UseWindowResizeTest from "./components/use layout effect/WindowResizeTest";
-import ToParticualrSection from "./components/ParticularSection";
 import Weather from "./components/weather app/Weather";
 import Navbar2 from "./components/Navbar2";
 import Gallery from "./pages/Gallery";
@@ -72,7 +66,7 @@ const App = () => {
 			<TestingCustomHooks />
 			<TestOutsideClick />
 			<UseWindowResizeTest />
-			{/* <ToParticualrSection /> */}
+			{/* <ToParticualrSection  /> */}
 			<Weather />
 			<Navbar2 />
 			<Routes>
