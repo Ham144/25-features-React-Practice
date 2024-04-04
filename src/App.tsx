@@ -26,19 +26,19 @@ import About from "./pages/About";
 import PageNotFound from "./components/404";
 
 const App = () => {
-	const ref = useRef<HTMLDivElement>(null);
+	// const ref = useRef<HTMLDivElement>(null);
 	const [theme, setTheme] = useState("dark");
 
 	const handleTheme = (newTheme: string) => {
 		setTheme(newTheme);
 	};
 
-	useEffect(() => {
-		ref.current?.scrollIntoView({
-			behavior: "smooth",
-			block: "end",
-		});
-	}, []);
+	// useEffect(() => {
+	// 	ref.current?.scrollIntoView({
+	// 		behavior: "smooth",
+	// 		block: "end",
+	// 	});
+	// }, []);
 
 	return (
 		<div
@@ -75,7 +75,7 @@ const App = () => {
 				<Route path="/about" element={<About />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
-			<div ref={ref} />
+			{/* <div ref={ref} /> */}
 		</div>
 	);
 };
