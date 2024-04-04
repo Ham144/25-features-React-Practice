@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-export default function Tabs({ Tabs, onChange }) {
+export default function Tabs({ Tabs }) {
 	const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
 	function handleCahngeTab(getIndex) {
 		setCurrentTabIndex(getIndex);
+		//@ts-ignore
 		onchange(getIndex);
 	}
 

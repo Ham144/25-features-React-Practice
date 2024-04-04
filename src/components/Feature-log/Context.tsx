@@ -4,7 +4,6 @@ import ShowFlagsDataResponse from "./data";
 export const FlagsContext = createContext(null);
 
 export default function ShowFlagsDataGlobal({ children }) {
-	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [enabledFlags, setEnableFlags] = useState({});
 

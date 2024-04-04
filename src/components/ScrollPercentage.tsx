@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-const ScrollPercentageContext = createContext(); //this one which is called context
+const ScrollPercentageContext = createContext(null); //this one which is called context
 const ScrollPercentage = ({ children }) => {
 	//this one that is called provider
 	const [scrollPercentage, setScrollPercentage] = useState(0);

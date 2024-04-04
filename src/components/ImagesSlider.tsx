@@ -29,6 +29,13 @@ export default function ImagesSlider(props: Props) {
 		fetchingData();
 	}, [props.url]);
 
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
+
+	if (error) {
+		console.log(error);
+	}
 	// if (error) {
 	// 	alert("Oops, we cought by police" + error);
 	// }

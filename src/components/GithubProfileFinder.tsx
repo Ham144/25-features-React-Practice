@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import User from "./User";
 
 export default function GithubProfileFinder() {

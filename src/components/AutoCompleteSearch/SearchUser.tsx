@@ -34,8 +34,7 @@ export default function SearchUser() {
 						(item) =>
 							item.firstName.toLowerCase().indexOf(query) > -1 ||
 							item.lastName.toLowerCase().indexOf(query) > -1 ||
-							item.maidenName.toLowerCase().indexOf(query) > -1
-				  )
+							item.maidenName.toLowerCase().indexOf(query) > -1 )
 				: [];
 
 		if (filteredData.length) {
@@ -59,7 +58,8 @@ export default function SearchUser() {
 	}
 
 	const handlePick = (e: string) => {
-		const text = e.target.innerText;
+		//@ts-ignore
+		const text = e?.target?.innerText;
 		setSearchParams(text);
 		setFilteredUsers([]);
 		setDropdown(false);

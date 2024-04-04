@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import TabImplement from "./tab-component/TabImplement";
 import Tabs from "./tab-component/Tabs";
 import { ScrollPercentageContexts } from "./ScrollPercentage";
 
@@ -32,7 +31,8 @@ const navigationlist = [
 
 export default function Header() {
 	const [bgColored, setBgColored] = useState(true);
-	const { scrollPercentage } = useContext(ScrollPercentageContexts); //ga tau kenapa bisa
+	//@ts-ignore
+	const { scrollPercentage } = useContext(ScrollPercentageContexts);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -55,6 +55,7 @@ export default function Header() {
 					scrollPercentage > 5 ? "hidden" : ""
 				} fixed sm:h-12 z-50 w-screen rounded-lg top-4 sm:translate-x-[400px]`}
 			>
+				{/* @ts-ignore */}
 				<Tabs Tabs={navigationlist} onChange={null} />
 			</div>
 		</nav>

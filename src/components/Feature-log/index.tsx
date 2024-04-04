@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Menuitems } from "../../lib/data";
 import Accordion from "../../pages/Accordion";
 import RandomColor from "../../pages/RandomColor";

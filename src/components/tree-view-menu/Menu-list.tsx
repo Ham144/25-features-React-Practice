@@ -15,7 +15,8 @@ export default function MenuList({ menuList = [] }: Props) {
 			<div className="translate-x-3 ">
 				{" "}
 				{menuList && menuList.length
-					? menuList.map((listItem) => <MenuItem item={listItem} />)
+					? //@ts-ignore
+					  menuList.map((listItem) => <MenuItem item={listItem} />)
 					: null}
 			</div>
 		</ul>

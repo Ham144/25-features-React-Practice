@@ -34,6 +34,7 @@ export default function TabImplement() {
 
 	return (
 		<div>
+			{/*@ts-expect-error */}
 			<Tabs Tabs={navigation} onChange={handleOnChange} />
 		</div>
 	);

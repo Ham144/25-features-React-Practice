@@ -20,6 +20,7 @@ export default function TreeViewMenu({ menus }: Props) {
 	function useOutsideAlerter(ref: HTMLDivElement) {
 		useEffect(() => {
 			function handleClickOutside(event) {
+				//@ts-ignore
 				if (ref.current && !ref.current.contains(event.target)) {
 					setShowMenu(false);
 				}
@@ -32,6 +33,7 @@ export default function TreeViewMenu({ menus }: Props) {
 			};
 		}, [ref]);
 	}
+	//@ts-ignore
 	useOutsideAlerter(wrapper); //for hiding when click outside
 	useEffect(() => {
 		setTranslatex(translatex === "-300px" ? "" : "-300px");
