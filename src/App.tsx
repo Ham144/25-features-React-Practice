@@ -25,6 +25,11 @@ import TestOutsideClick from "./components/when outside-click";
 import UseWindowResizeTest from "./components/use layout effect/WindowResizeTest";
 import ToParticualrSection from "./components/ParticularSection";
 import Weather from "./components/weather app/Weather";
+import Navbar2 from "./components/Navbar2";
+import Gallery from "./pages/Gallery";
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import PageNotFound from "./components/404";
 
 const App = () => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -69,6 +74,13 @@ const App = () => {
 			<UseWindowResizeTest />
 			{/* <ToParticualrSection /> */}
 			<Weather />
+			<Navbar2 />
+			<Routes>
+				<Route path="/" />
+				<Route path="/gallery" element={<Gallery />} />
+				<Route path="/about" element={<About />} />
+				<Route path="*" element={<PageNotFound />} />
+			</Routes>
 			<div ref={ref} />
 		</div>
 	);
