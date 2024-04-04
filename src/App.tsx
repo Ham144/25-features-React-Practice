@@ -1,7 +1,8 @@
 import Home from "./pages/Home";
 import Accordion from "./pages/Accordion";
 import RandomColor from "./pages/RandomColor";
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import StarRatings from "./components/StarRatings";
 import ImagesSlider from "./components/ImagesSlider";
 import Loadmore from "./components/Loadmore";
